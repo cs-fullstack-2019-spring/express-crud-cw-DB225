@@ -5,7 +5,29 @@ var Schema = mongoose.Schema;
 
 var CrimeSchema = new Schema(
     {
-        //Enter model information here
+        category: [{
+            code: String,
+            name: String,
+        }],
+        date: Number,
+        person_id: String,
+        crime: [{
+            category: String,
+            location_type: String,
+            location: [{
+                latitude: Number,
+                street: [{
+                    id: Number,
+                    name: String
+                }],
+                longitude: Number
+            }],
+            context: String,
+            persistent_id: Number,
+            id: Number,
+            location_subtype: String,
+            month: Number
+        }],
     });
 
 //Export model
